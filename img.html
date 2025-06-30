@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>image slider</title>
+  <link rel="stylesheet" href="img.css">
+</head>
+<body>
+  <div id="im">
+    <img id="slider" src="roni.pic.jpg" width="300" height="200">
+    <div id="btn">
+    <button onclick="prevImage() "> Previous</button>
+    <button onclick="nextImage() "> Next</button>
+    </div>
+  </div>
+
+  <script>
+    const images=["ecoroni.jpg", "roni.pic.jpg", "roni1.jpg", "habibur.jpg"];
+    let currentIdx=0;
+
+    function prevImage(){
+      currentIdx=(currentIdx -1 +images.length)%images.length;
+      document.getElementById('slider').src=images[currentIdx];
+    }
+    
+    function nextImage(){
+      currentIdx=(currentIdx + 1)%images.length;
+      document.getElementById('slider').src=images[currentIdx];
+    }
+
+  </script>
+</body>
+</html>
